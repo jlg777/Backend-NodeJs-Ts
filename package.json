@@ -25,11 +25,5 @@
   "dependencies": {
     "express": "4.21.2",
     "morgan": "^1.10.0"
-  },
-  "eslintConfig": {
-    "extends":["./node_modules/ts-standard/eslintrc.json"]
-  },
-  "parserOptions": {
-    "project": "./tsconfig.json"
   }
 }
