@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.get('/', (_req: Request, res: Response) => {
-res.send('Hola')
+  res.send('Hola')
 })
 
 app.use('/api/diaries', diariesRouter)
