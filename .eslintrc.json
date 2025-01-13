@@ -5,6 +5,9 @@
         ]
     },
     "parserOptions": {
-        "project": "./tsconfig.json"
+        "project": ""
+    },
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
     }
 }
