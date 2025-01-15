@@ -22,6 +22,7 @@ export const findId = (req: Request, res: Response): void => {
   try {
     const entry = diaries.find(d => d.id === Number(id))
     if (entry == null) {
+      res.status(404).send(`No se encuentra el id ${id}`)
       return
     }
     const { comment, ...entryWithoutComment } = entry
