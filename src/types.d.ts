@@ -8,3 +8,5 @@ export interface diariesEntry {
   visibility: visibility
   comment: string
 }
+
+export type diarieWithoutComment = Omit<diariesEntry, 'comment'>
