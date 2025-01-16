@@ -10,3 +10,5 @@ export interface diariesEntry {
 }
 
 export type diarieWithoutComment = Omit<diariesEntry, 'comment'>
+
+export type diarieWithoutId = Omit<diariesEntry, 'id'>
