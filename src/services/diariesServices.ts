@@ -81,3 +81,25 @@ export const addEntrie = (req: Request, res: Response): void => {
     }
   }
 }
+
+export const deleteId = (req: Request, res: Response): void => {
+  const { id } = req.params
+
+  try {
+    const deleteEntri = diaries.findIndex(d => d.id === Number(id))
+    if (deleteEntri === -1) {
+      res.status(404).send(`No se encuentra el id ${id}`)
+      return
+    }
+    diaries.splice(deleteEntri, 1)
+    res.status(200).json({ message: `Diario con id ${id} eliminado correctamente`, diaries })
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error('Error al consultar los Diarios:', error)
+      res.status(500).send(error.message)
+    } else {
+      console.error('Error desconocido:', error)
+      res.status(500).send('Error desconocido')
+    }
+  }
+}
